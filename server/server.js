@@ -86,6 +86,7 @@ Reason: [Provide reasoning using pattern, trend, or imbalance – avoid randomne
         console.log(result.text);
         io.emit("prediction", result.text)
     } catch (error) {
+        console.log("Error in handler:", error)
         console.error("Error:", error.message);
     }
 }
@@ -95,5 +96,5 @@ setInterval(doPrediction, 30000);
 
 const PORT = process.env.PORT || 8080
 server.listen(PORT, () => {
-    console.log("Server is running on port 3000");
+    console.log("Server is running on port:", PORT);
 });
